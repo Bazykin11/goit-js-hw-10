@@ -15,6 +15,9 @@ inputValue.addEventListener('input',debounce(inputCountry, DEBOUNCE_DELAY));
 
 function inputCountry (e){
    const form = e.target.value.trim();
+   if(!form){
+      return
+   }
    clearMarkup();
 
    fetchCountry(form)
